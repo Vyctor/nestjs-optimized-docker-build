@@ -18,6 +18,6 @@ Dockerfile utiliza um multi-stage build para criar uma imagem de produção otim
 
 | REPOSITORY | TAG    | IMAGE ID     | CREATED          | SIZE |
 |------------|--------|--------------|------------------|------|
-| nestjs3 - Opção 1    | latest | 207b4e43ccf4 | 5 seconds ago    | 142MB|
+| nestjs3 - Opção 3    | latest | 207b4e43ccf4 | 5 seconds ago    | 142MB|
 | nestjs2 - Opção 2    | latest | 2b874cbcfa26 | 14 seconds ago   | 144MB|
-| nestjs1 - Opção 3    | latest | 66d9d10293cc | 32 seconds ago   | 631MB|
+| nestjs1 - Opção 1    | latest | 66d9d10293cc | 32 seconds ago   | 631MB|
