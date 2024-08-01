@@ -1,0 +1,21 @@
+FROM node:20-alpine as development
+WORKDIR /app
+COPY package*.json .
+RUN npm ci
+COPY . .
+
+FROM node:20-alpine as build
+WORKDIR /app
+COPY package*.json .
+COPY --from=development /app/node_modules ./node_modules
+COPY . .
+RUN npm run build
+RUN npm ci --only=production
+RUN npm cache clean --force
+
+FROM node:20-alpine as production
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/node_modules ./node_modules
+
+CMD [ "node", "dist/main.js"]
